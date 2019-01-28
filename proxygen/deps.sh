@@ -164,13 +164,4 @@ if test $? -ne 0; then
 fi
 cd ../..
 
-# Build proxygen
-autoreconf -ivf
-./configure
-make -j$JOBS
 
-# Run tests
-LD_LIBRARY_PATH=/usr/local/lib make check
-
-# Install the libs
-sudo make install
